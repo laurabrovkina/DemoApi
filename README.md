@@ -24,3 +24,10 @@ But there is no UI by default
 ```
 https://localhost:7227/swagger/index.html
 ```
+2. Use other similar UI for API
+* In this example we add package `Scalar.AspNetCore`
+* Instead of Swagger, add in `Program.cs`:
+```
+app.MapScalarApiReference();
+```
+* Use different options to customise it

@@ -1,3 +1,5 @@
+using Scalar.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,9 +14,14 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.UseSwaggerUI(options =>
+    app.MapScalarApiReference(options =>
     {
-        options.SwaggerEndpoint("/openapi/v1.json", "Demo Api");
+        options
+            .WithTitle("Demo Api")
+            .WithTheme(ScalarTheme.Purple)
+            .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient)
+            .WithDarkModeToggle(true)
+            .WithApiKeyAuthentication(keyOptions => keyOptions.Token = "apikey");
     });
 }
 

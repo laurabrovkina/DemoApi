@@ -6,7 +6,7 @@ This small project shows the ways with new approach to API UI in .NET 9. Swagger
 
 To browse the documentation generated in json for the current API:
 ```
-https://localhost:7227/openapi/v1.json
+https://localhost:5006/openapi/v1.json
 ```
 But there is no UI by default 
 
@@ -22,7 +22,7 @@ But there is no UI by default
 * Go to the link:
 
 ```
-https://localhost:7227/swagger/index.html
+https://localhost:5006/swagger/index.html
 ```
 2. Use other similar UI for API
 * In this example we add package `Scalar.AspNetCore`
@@ -31,3 +31,7 @@ https://localhost:7227/swagger/index.html
 app.MapScalarApiReference();
 ```
 * Use different options to customise it
+* To open the new UI follow the link:
+```
+http://localhost:5006/scalar/v1
+```
